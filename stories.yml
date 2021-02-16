@@ -1,0 +1,88 @@
+version: '2.0'
+
+stories:
+- story: bookroom
+  steps:
+  - intent: book_room
+  - action: utter_book_room
+  - intent: rooms_number
+    entities:
+    - roomsnumber: "2"
+  - slot_was_set:
+      - roomsnumber: "2"
+  - action: utter_room_type
+  - intent: room_type_simple
+#   entities:
+#   - roomtype: "Simple"
+# - slot_was_set:
+#     - roomtype: "Simple"
+#   entities:
+#   - roomtype: "Deluxe"
+# - slot_was_set:
+#     - roomtype: "Deluxe"
+  - action: utter_final_room_simple
+
+- story: bookroom2
+  steps:
+  - intent: book_room
+  - action: utter_book_room
+  - intent: rooms_number
+    entities:
+    - roomsnumber: "2"
+  - slot_was_set:
+      - roomsnumber: "2"
+  - action: utter_room_type
+  - intent: room_type_deluxe
+#    entities:
+#    - roomtype: "Deluxe"
+#  - slot_was_set:
+#      - roomtype: "Deluxe"
+  - action: utter_final_room_deluxe
+
+- story: cleaningrightnow
+  steps:
+  - intent: cleaning
+  - action: utter_cleaning
+  - intent: cleaning_right_now
+  - action: utter_cleaning_right_now 
+
+- story: checkin
+  steps:
+  - intent: FAQs_check_in
+  - action: utter_FAQs_check_in
+
+- story: checkout
+  steps:
+  - intent: FAQs_check_out
+  - action: utter_FAQs_check_out
+
+- story: cancel reservation
+  steps:
+  - intent: FAQs_cancel_reservation
+  - action: utter_FAQs_cancel_reservation_1
+  - action: utter_FAQs_cancel_reservation_2 
+
+- story: cancellationpolicy
+  steps:
+  - intent: FAQs_cancellation_policy
+  - action: utter_FAQs_cancellation_policy
+ 
+- story: restaurant
+  steps:
+  - intent: FAQs_restaurant
+  - action: utter_FAQs_restaurant
+
+- story: breakfastavailability
+  steps:
+  - intent: FAQs_breakfast_availability
+  - action: utter_FAQs_breakfast_availability
+
+- story: breakfasttimings
+  steps:
+  - intent: FAQs_breakfast_timings
+  - action: utter_FAQs_breakfast_timings
+
+- story: restauranttiming
+  steps:
+  - intent: FAQs_restaurant_timings
+  - action: utter_FAQs_restaurant_timings
